@@ -4727,6 +4727,8 @@ function run() {
             }
             console.log(`adding ${gccPath} to PATH`);
             core.addPath(gccPath);
+            console.log(`index.js: exporting GNU_INSTALL_ROOT=${gccPath}`)
+            core.exportVariable("GNU_INSTALL_ROOT", ${gccPath})        
         }
         catch (error) {
             core.setFailed(error.message);
