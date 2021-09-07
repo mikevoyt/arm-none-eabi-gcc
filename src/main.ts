@@ -24,6 +24,9 @@ async function run(): Promise<void> {
     }
     console.log(`adding ${gccPath} to PATH`)
     core.addPath(gccPath)
+    console.log(`exporting GNU_INSTALL_ROOT=${gccPath}`)
+    core.exportVariable("GNU_INSTALL_ROOT", ${gccPath})
+
   } catch (error) {
     core.setFailed(error.message)
   }
